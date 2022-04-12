@@ -53,6 +53,10 @@
                     <p>How important is the dental school's specialization rate? This is a measure of how many students match into specialty programs at each school. </p>
                     <input id="specialization" class="specialization" type="text"></input>
                 </div>
+                <div class="question">
+                    <p>experience placholder</p>
+                    <input id="experience" class="experience" type="text"></input>
+                </div>
                 <button onclick="submit()">submit</button>
                 <div class="error-message-hidden">Error, duplicate rankings or rankings out of range</div>
             </section>
@@ -66,6 +70,8 @@
             const researchRank = document.getElementById("research")
             const socialRank = document.getElementById("social")
             const specializationRank = document.getElementById("specialization")
+            const experienceRank = document.getElementById("experience")
+            
             const errorMessage = document.querySelector(".error-message-hidden")
             const ranks = []; 
             menu.addEventListener('click', () => {
@@ -86,6 +92,7 @@
                 ranks.push(researchRank.value);
                 ranks.push(socialRank.value);
                 ranks.push(specializationRank.value);
+                ranks.push(experienceRank.value);
                 if(hasDuplicates(ranks)){
                     console.log("error duplicates")
                     ranks.length = 0;
@@ -94,7 +101,7 @@
                     return
                 }
                 for(let i = 0; i < ranks.length; i++){
-                    if(ranks[i] <= 0 || ranks[i] > 5){
+                    if(ranks[i] <= 0 || ranks[i] > ranks.length){
                         console.log("error")
                         ranks.length = 0;
                         errorMessage.classList.remove("error-message-hidden")
@@ -114,3 +121,4 @@
         </script>
     </body>
 </html>
+
