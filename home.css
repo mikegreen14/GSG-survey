@@ -1,0 +1,144 @@
+body{
+    margin: 1.5em;
+    font-family: "balsamiq sans", sans-serif;
+    background-color: black;
+}
+
+a{
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+.logo{
+    color: skyblue;
+    font-weight: bold;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+}
+nav{
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    background: white;
+    width: 50%;
+    z-index: 2;
+    transform: translateX(100%);
+    transition: transform .5 ease-in-out;
+}
+.open-nav{
+    transform: translateX(0%);
+    transition: transform .5 ease-in-out;
+}
+nav ul{
+    list-style-type: none;
+    padding: 0;
+    margin-top: 8em;
+}
+
+nav ul a{
+    color: black;
+    padding: .75em 2em;
+    display: block;
+    
+}
+nav ul a:hover{
+    background: grey;
+}
+
+nav .close{
+    float: right;
+    margin: 2em;
+    width: 2.5em;
+}
+header svg{
+    width: 3em;
+    margin-top: -.6em;
+
+}
+header svg:hover{
+    cursor: pointer;
+}
+
+section.hero{
+    color: white;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: moveDown 1s ease-in-out forwards;
+    opacity: 0;
+}
+section.hero h1{
+    font-size: 3rem;
+    margin-top: 3em;
+    line-height: 3.3em;
+}
+section.hero a{
+    color: white;
+    text-decoration: none;
+}
+
+section.hero a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+@media only screen and (min-width: 680px){
+
+    body{
+        margin: 1.5em 5em;
+        font-family: "balsamiq sans", sans-serif;
+        background-color: black;
+    }
+}
+
+@media only screen and (min-width: 920px){
+
+    .menu{
+        display: none;
+    }
+
+    nav{
+        transform: translateX(0);
+        position: unset;
+        display: block;
+        width: auto;
+        height: auto;
+        background: none;
+        
+
+    }
+    svg.close{
+        display: none;
+    }
+    nav ul{
+        display: flex;
+        margin: 0;
+    }
+    nav ul a{
+        color: white;
+        padding: .5em 1.5em;
+        font-size: .9rem;
+
+    }
+    nav ul a:hover{
+        background: none;
+        text-decoration: underline;
+    }
+}
+
+@keyframes moveDown{
+    from{
+        transform: translateY(-100px);
+
+    }
+    to{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
