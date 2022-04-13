@@ -115,12 +115,26 @@ section.hero div{
 .description{
     padding-bottom: 2em;
 }
-.button{
-    background-color: skyblue;
-    color: white;
+
+.submitbutton {
+    background-color: #ffffff;
+    color: black;
     padding: 16px;
-    font-size: 16px;
+    font-size: 20px;
     border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    margin: 5%;
+    margin-bottom: 10%;
+}
+
+.button{
+    background-color: #ffffff;
+    color: black;
+    padding: 16px;
+    font-size: 28px;
+    border: none;
+    border-radius: 15%;
     cursor: pointer;
 }
 
